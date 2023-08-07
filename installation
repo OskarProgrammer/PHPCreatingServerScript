@@ -1,0 +1,19 @@
+#!/bin/bash
+
+function installScript() {
+    
+    echo -e "\e[92m Trying to install the script... \e[0m";
+    chmod +x createServer && sudo cp ./createServer /bin/ && return 0; 
+    return 1;
+}
+
+installScript
+
+if [ $? -eq 0 ]; then
+    echo -e "\e[32m Success! Now you can use your script by writing: \n
+        createServer localhost:5000 ./ \e[0m";
+else
+
+    echo -e "\e[31m Failure! \e[0m";
+
+fi
